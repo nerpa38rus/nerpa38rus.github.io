@@ -2,6 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Site for DIGITLAB</title>
@@ -11,7 +12,7 @@
     <header class="header" id = "header">
         <nav class="nav">
             <a class="nav_link" onclick="slowScroll('#home')" href="#home">Иркутск</a>
-            <a class="nav_link" onclick="printText(el)", onclick="slowScroll('#info')" href="#info">Информация</a>
+            <a class="nav_link" onclick="slowScroll('#info')" href="#info">Информация</a> <!-- onclick="printText(el)", для печатанья --> 
             <a class="nav_link" onclick="slowScroll('#about')" href="#about">Кто мы?</a>
             <a class="nav_link" onclick="slowScroll('#cont')" href="#cont">Связаться с нами</a>
         </nav>
@@ -19,22 +20,20 @@
 
     <div class="page">
         <section class="section1" id="home">
-            <h2 class="section_title">Иркутск - столица Восточной Сибири</h2>
+            <h2 class="section_title">Иркутск - город столичный</h2>
         </section>
 
         <section class="section2" id="info">
             <div id="text">
                 <br><br><br><br><br>Иркутск – уникальный, старинный город, столица Восточной Сибири. 
                 Близость к озеру Байкал делает его настоящим туристическим центром, ежегодно тысячи российских и иностранных туристов посещают Иркутск.
-                <br><br><br>Крупный научно-образовательный центр, в котором обучается свыше ста тысяч студентов. 
-                Среди отраслей промышленности — авиастроение, гидроэнергетика и производство продуктов питания. 
                 </div>
 
         </section>
 
         <section class="section3" id="about">
             <h2>Мы - дети Иркутска!</h2>
-            <div>
+            <div><br><br><br><br><br><br>
                 <p>текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст 
                     текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст текст 
                     текст текст текст текст текст текст текст текст текст текст                     
@@ -54,29 +53,30 @@
 <script src="js/app.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> <!-- scroll crasivii--> 
 <script>
+//printtext
+//    function printText(el){    
+//       let letterTimeout = 40
+//        let text = el.innerHTML
+//        let i = 70
+//        let print__fn = function(){
+//                if( i <= text.length ){ 
+//                    el.innerHTML = text.substr( 0, i );
+//                    setTimeout(arguments.callee, letterTimeout);
+//                } 
+//                i++;
+//            }           
+//        print__fn() 
+//    };
+    // init
+//    let el = document.getElementById( 'text' )
+ //   printText( el );
+    // отключил из-за бага, который не дает написаться тексту полностью и пишет его по новой, при нажатии на линк
+
   function slowScroll(id) {
   $('html,body').animate({
     scrollTop: $(id).offset().top
     }, 500);
   }
-//printtext
-    function printText(el){    
-        let letterTimeout = 20
-        let text = el.innerHTML
-        let i = 1
-        let print__fn = function(){
-                if( i <= text.length ){
-                    el.innerHTML = text.substr( 0, i );
-                    setTimeout(arguments.callee, letterTimeout);
-                } 
-                i++;
-            }           
-        print__fn() 
-    };
-    // init
-    let el = document.getElementById( 'text' )
-    printText( el );
-    
     </script>
     <footer id="footer">
         <div>
